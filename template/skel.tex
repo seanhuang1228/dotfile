@@ -1,0 +1,72 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage{xeCJK}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage[x11names]{xcolor}
+\usepackage{setspace}
+\usepackage{hyperref}
+
+\newcommand{\curly}{\rightsquigarrow}
+\newcommand{\documentname}{文件名稱}
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+
+\setCJKmainfont{AR PL UMing TW}
+\setCJKmonofont{AR PL UMing TW}
+
+\topmargin=0pt
+\headheight=15pt
+\headsep=25pt
+\footskip=20pt
+\marginparsep=0pt
+\marginparwidth=0pt
+\marginparpush=0pt
+\oddsidemargin=0pt
+\evensidemargin=0pt
+\textwidth=495pt
+\textheight=700pt
+\voffset=-20pt
+\hoffset=-21pt
+\onehalfspacing
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=RoyalBlue2,
+  urlcolor=RoyalBlue1,
+  pdftitle={\documentname},
+  pdfpagemode=FullScreen
+}
+
+\lstset{
+  basicstyle=\normalsize\ttfamily,
+  backgroundcolor=\color{Azure1},
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  tabsize=2,
+  captionpos=b,
+  breaklines=true,
+  breakatwhitespace=false,
+  keepspaces=true,
+  keywordstyle=\bfseries\color{Blue1},
+  commentstyle=\itshape\color{Red4},
+  stringstyle=\itshape\color{Green4},
+  frame=single,
+  rulecolor=\color{black},
+}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyfoot[C]{\thepage}
+\fancyhead[L]{\documentname}
+\fancyhead[R]{Sean Huang}
+\section{Sec 1.}
+\end{document}
