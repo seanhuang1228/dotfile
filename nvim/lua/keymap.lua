@@ -1,0 +1,7 @@
+vim.keymap.set("n", "<Leader>t", ":NvimTreeToggle<cr>")
+vim.keymap.set("n", "<Leader>n", ":bnext<cr>")
+vim.keymap.set("n", "<Leader>p", ":bprevious<cr>")
+vim.keymap.set("n", "<Leader>hw", ":HopWord<cr>")
+vim.keymap.set("n", "<Leader>hc", ":HopChar2<cr>")
+vim.keymap.set("n", "<Leader>hp", ":HopPattern<cr>")
+vim.keymap.set("n", "<Leader>ha", ":HopAnywhere<cr>")
