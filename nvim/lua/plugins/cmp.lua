@@ -96,3 +96,9 @@ require('lspconfig')['clangd'].setup {
 require('lspconfig')['ltex'].setup {
   capabilities = capabilities
 }
+require('lspconfig')['docker_compose_language_service'].setup {
+  capabilities = capabilities
+}
+require('lspconfig')['pylsp'].setup {
+  capabilities = capabilities
+}
