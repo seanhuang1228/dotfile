@@ -1,13 +1,15 @@
 \documentclass[12pt, a4paper]{article}
 
-\usepackage{xeCJK}
+\usepackage{luatexja-fontspec}
 \usepackage{listings}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{fancyhdr}
-\usepackage[x11names]{xcolor}
 \usepackage{setspace}
 \usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage[x11names]{xcolor}
+\usepackage[mathscr]{euscript}
 
 \newcommand{\curly}{\rightsquigarrow}
 \newcommand{\documentname}{文件名稱}
@@ -19,8 +21,7 @@
   \array{#1}}
 \makeatother
 
-\setCJKmainfont{AR PL UMing TW}
-\setCJKmonofont{AR PL UMing TW}
+\setmainjfont{Source Han Sans TW}
 
 \topmargin=0pt
 \headheight=15pt
