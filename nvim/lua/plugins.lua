@@ -1,57 +1,104 @@
-require "paq" {
-  "savq/paq-nvim",
+return require('packer').startup( function(use)
+  use "wbthomason/packer.nvim"
+
   -- auto complete
-  "neovim/nvim-lspconfig",
-  "hrsh7th/cmp-nvim-lsp",
-  "hrsh7th/cmp-buffer",
-  "hrsh7th/cmp-path",
-  "hrsh7th/cmp-cmdline",
-  "hrsh7th/nvim-cmp",
-  "hrsh7th/cmp-vsnip",
-  "hrsh7th/vim-vsnip",
-  "williamboman/mason.nvim",
+  use "neovim/nvim-lspconfig"
+  use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-buffer"
+  use "hrsh7th/cmp-path"
+  use "hrsh7th/cmp-cmdline"
+  use "hrsh7th/cmp-vsnip"
+  use "hrsh7th/vim-vsnip"
+  use { "hrsh7th/nvim-cmp",
+    config = function ()
+      require "plugins.cmp"
+    end
+  }
+  use { "williamboman/mason.nvim",
+    config = function ()
+      require "plugins.mason"
+    end
+  }
 
   -- fuzzy
-  "nvim-lua/plenary.nvim",
-  { "nvim-telescope/telescope.nvim", branch = "0.1.x" },
+  use "nvim-lua/plenary.nvim"
+  use { "nvim-telescope/telescope.nvim",
+    branch = "0.1.x",
+    config = function ()
+      require "plugins.telescope"
+    end
+  }
 
   -- file explorer
-  "nvim-tree/nvim-tree.lua",
-  "nvim-tree/nvim-web-devicons",
+  use { "nvim-tree/nvim-tree.lua",
+    config = function ()
+      require "plugins.nvim-tree"
+    end
+  }
+  use "nvim-tree/nvim-web-devicons"
 
   -- syntax
-  { 'nvim-treesitter/nvim-treesitter', run = function() vim.cmd 'TSUpdate' end },
+  use { 'nvim-treesitter/nvim-treesitter',
+    run = function ()
+      vim.cmd 'TSUpdate'
+    end,
+    config = function ()
+      require "plugins.nvim-treesitter"
+    end
+  }
 
   -- appearance
-  "rafamadriz/neon",
-  "nvim-lualine/lualine.nvim",
+  use { "rafamadriz/neon",
+    config = function ()
+      require "plugins.theme"
+    end
+  }
+  use { "nvim-lualine/lualine.nvim",
+    config = function ()
+      require "plugins.lualine"
+    end
+  }
 
   -- git
-  "lewis6991/gitsigns.nvim",
+  use { "lewis6991/gitsigns.nvim",
+    config = function ()
+      require "plugins.gitsigns"
+    end
+  }
 
   -- dev
-  "windwp/nvim-autopairs",
-  "numToStr/Comment.nvim",
-  "kylechui/nvim-surround",
-  "phaazon/hop.nvim",
+  use { "windwp/nvim-autopairs",
+    config = function ()
+      require "plugins.nvim-autopairs"
+    end
+  }
+  use { "numToStr/Comment.nvim",
+    config = function ()
+      require "plugins.Comment"
+    end
+  }
+  use { "kylechui/nvim-surround",
+    config = function ()
+      require "plugins.nvim-surround"
+    end
+  }
+  use { "phaazon/hop.nvim",
+    config = function ()
+      require "plugins.hop"
+    end
+  }
 
   -- markdown
-  { "iamcco/markdown-preview.nvim", run = function() vim.fn['mkdp#util#install']() end },
+  use { "iamcco/markdown-preview.nvim",
+    run = function ()
+      vim.fn['mkdp#util#install']()
+    end
+  }
 
   -- latex
-  "lervag/vimtex",
-}
-
-require "plugins.nvim-autopairs"
-require "plugins.mason"
-require "plugins.cmp"
-require "plugins.telescope"
-require "plugins.nvim-tree"
-require "plugins.nvim-treesitter"
-require "plugins.theme"
-require "plugins.lualine"
-require "plugins.gitsigns"
-require "plugins.Comment"
-require "plugins.nvim-surround"
-require "plugins.hop"
-require "plugins.vimtex"
+  use { "lervag/vimtex",
+    config = function ()
+      require "plugins.vimtex"
+    end
+  }
+end)
