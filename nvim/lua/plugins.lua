@@ -101,4 +101,12 @@ return require('packer').startup( function(use)
       require "plugins.vimtex"
     end
   }
+
+  -- start up
+  use { "startup-nvim/startup.nvim",
+    requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
+    config = function()
+      require "plugins.startup"
+    end
+  }
 end)
