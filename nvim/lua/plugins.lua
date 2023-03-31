@@ -37,6 +37,9 @@ require "paq" {
 
   -- markdown
   { "iamcco/markdown-preview.nvim", run = function() vim.fn['mkdp#util#install']() end },
+
+  -- latex
+  "lervag/vimtex",
 }
 
 require "plugins.nvim-autopairs"
@@ -51,3 +54,4 @@ require "plugins.gitsigns"
 require "plugins.Comment"
 require "plugins.nvim-surround"
 require "plugins.hop"
+require "plugins.vimtex"

@@ -93,7 +93,7 @@ require('lspconfig')['lua_ls'].setup {
 require('lspconfig')['clangd'].setup {
   capabilities = capabilities
 }
-require('lspconfig')['ltex'].setup {
+require('lspconfig')['texlab'].setup {
   capabilities = capabilities
 }
 require('lspconfig')['docker_compose_language_service'].setup {

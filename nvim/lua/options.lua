@@ -42,3 +42,7 @@ vim.o.splitright = true
 
 -- vim.wo.foldmethod = "expr"
 -- vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
+
+vim.cmd [[
+  filetype plugin on
+]]
