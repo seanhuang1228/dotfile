@@ -14,8 +14,20 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup( function(use)
   use "wbthomason/packer.nvim"
 
-  -- auto complete
+  -- lsp
+  use { "williamboman/mason.nvim",
+    config = function ()
+      require "plugins.mason"
+    end
+  }
+  use { "williamboman/mason-lspconfig.nvim",
+    config = function ()
+      require "plugins.mason-lspconfig"
+    end
+  }
   use "neovim/nvim-lspconfig"
+
+  -- auto complete
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-buffer"
   use "hrsh7th/cmp-path"
@@ -25,11 +37,6 @@ return require('packer').startup( function(use)
   use { "hrsh7th/nvim-cmp",
     config = function ()
       require "plugins.cmp"
-    end
-  }
-  use { "williamboman/mason.nvim",
-    config = function ()
-      require "plugins.mason"
     end
   }
 
