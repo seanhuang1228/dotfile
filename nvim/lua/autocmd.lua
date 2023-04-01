@@ -26,6 +26,15 @@ api.nvim_create_autocmd('LspAttach', {
   end
 })
 
+local packerGrp = api.nvim_create_augroup("packer settings", {
+  clear = true,
+})
+api.nvim_create_autocmd("BufWritePost", {
+  pattern = "plugins.lua",
+  command = "source <afile> | PackerCompile",
+  group = packerGrp,
+})
+
 local cppGrp = api.nvim_create_augroup("cpp settings", {
   clear = true,
 })
